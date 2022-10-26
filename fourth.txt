@@ -1,0 +1,189 @@
+
+hp@DESKTOP-SRLUD7O MINGW64 ~ (main)
+$ cd desktop
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop (main)
+$ cd gomycode
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode (main)
+$ mkdir learn_git
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode (main)
+$ cd learn_git
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$ touch third.txt
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$ git init
+Initialized empty Git repository in C:/Users/hp/Desktop/gomycode/learn_git/.git/
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$ git add third.txt
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   third.txt
+
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$ git commit -m "adding third.txt"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'hp@DESKTOP-SRLUD7O.(none)')
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$ git config --global user.name "cole00000"
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$ git config --global user.email "colerotimi0@gmail.com"
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$ git commit -m "adding third.txt"
+[main (root-commit) eddb6c6] adding third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$ git log
+commit eddb6c6dd664fc385b43f22815eab31c20f292fd (HEAD -> main)
+Author: cole00000 <colerotimi0@gmail.com>
+Date:   Fri Oct 21 10:03:26 2022 +0100
+
+    adding third.txt
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$ touch fourth.txt
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$ git add fourth.txt
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$ git commit -m "adding fourth.txt"
+[main a67168c] adding fourth.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$  git rm --cached [third.txt]
+fatal: pathspec '[third.txt]' did not match any files
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$  git rm --cached third.txt
+rm 'third.txt'
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$ git add "removing third.txt"
+fatal: pathspec 'removing third.txt' did not match any files
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$ git add .
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$ git commit -m "removing third.txt"
+On branch main
+nothing to commit, working tree clean
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$ git log
+commit a67168c4357eeba00bcd8cc9863705f0dd560968 (HEAD -> main)
+Author: cole00000 <colerotimi0@gmail.com>
+Date:   Fri Oct 21 10:04:42 2022 +0100
+
+    adding fourth.txt
+
+commit eddb6c6dd664fc385b43f22815eab31c20f292fd
+Author: cole00000 <colerotimi0@gmail.com>
+Date:   Fri Oct 21 10:03:26 2022 +0100
+
+    adding third.txt
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$ git config --global core.pager 'cat'
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+core.fsmonitor=true
+pull.rebase=false
+init.defaultbranch=main
+user.name=cole00000
+user.email=colerotimi0@gmail.com
+core.pager=cat
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+
+hp@DESKTOP-SRLUD7O MINGW64 ~/desktop/gomycode/learn_git (main)
+$ git config --global
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <type>     value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
